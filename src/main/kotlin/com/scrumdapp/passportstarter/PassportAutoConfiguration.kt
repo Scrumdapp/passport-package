@@ -1,5 +1,6 @@
-package com.scrumdapp.passportstarter.configs
+package com.scrumdapp.passportstarter
 
+import com.scrumdapp.passportstarter.PassportProperties
 import com.scrumdapp.passportstarter.filters.PassportAuthFilter
 import com.scrumdapp.passportstarter.jwk.PassportService
 import com.scrumdapp.passportstarter.jwk.jwtDecoder

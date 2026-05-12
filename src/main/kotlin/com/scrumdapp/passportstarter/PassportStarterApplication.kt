@@ -1,6 +1,6 @@
 package com.scrumdapp.passportstarter
 
-import com.scrumdapp.passportstarter.configs.PassportProperties
+import com.scrumdapp.passportstarter.PassportProperties
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.runApplication
