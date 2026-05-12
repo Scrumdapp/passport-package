@@ -104,5 +104,11 @@
             </plugin>
         </plugins>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>Github Packages</name>
+            <url>https://maven.pkg.github.com/Scrumdapp/passport-package</url>
+        </repository>
+    </distributionManagement>
 </project>
