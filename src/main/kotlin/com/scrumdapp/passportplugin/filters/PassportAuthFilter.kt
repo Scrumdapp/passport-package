@@ -1,6 +1,6 @@
-package com.scrumdapp.passportstarter.filters
+package com.scrumdapp.passportplugin.filters
 
-import com.scrumdapp.passportstarter.jwk.PassportService
+import com.scrumdapp.passportplugin.jwk.PassportService
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse

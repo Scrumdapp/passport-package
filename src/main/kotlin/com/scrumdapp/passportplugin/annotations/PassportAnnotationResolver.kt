@@ -1,17 +1,15 @@
-package com.scrumdapp.passportstarter.annotations
+package com.scrumdapp.passportplugin.annotations
 
-import com.scrumdapp.passportstarter.jwk.PassportService
+import com.scrumdapp.passportplugin.jwk.PassportService
 import lombok.AllArgsConstructor
 import org.springframework.core.MethodParameter
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.oauth2.jwt.Jwt
-import org.springframework.stereotype.Component
 import org.springframework.web.bind.support.WebDataBinderFactory
 import org.springframework.web.context.request.NativeWebRequest
 import org.springframework.web.method.support.HandlerMethodArgumentResolver
 import org.springframework.web.method.support.ModelAndViewContainer
 
-@Component
 @AllArgsConstructor
 class PassportResolver(
     private val passportService: PassportService,
@@ -30,7 +28,6 @@ class PassportResolver(
         val jwt = SecurityContextHolder.getContext().authentication?.principal as? Jwt
             ?: throw IllegalStateException("Principal couldn't be found or isn't a valid jwt")
 //        val param = parameter.getMethodAnnotation(Passport::class.java)
-
         return passportService.extractPassport(jwt)
     }
 

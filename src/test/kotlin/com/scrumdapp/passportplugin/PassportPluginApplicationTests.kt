@@ -1,10 +1,10 @@
-package com.scrumdapp.passportstarter
+package com.scrumdapp.passportplugin
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class PassportStarterApplicationTests {
+class PassportPluginApplicationTests {
 
     @Test
     fun contextLoads() {

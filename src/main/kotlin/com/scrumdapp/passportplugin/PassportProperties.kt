@@ -1,4 +1,4 @@
-package com.scrumdapp.passportstarter
+package com.scrumdapp.passportplugin
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 

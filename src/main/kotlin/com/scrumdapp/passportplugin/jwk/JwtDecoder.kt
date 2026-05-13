@@ -1,6 +1,6 @@
-package com.scrumdapp.passportstarter.jwk
+package com.scrumdapp.passportplugin.jwk
 
-import com.scrumdapp.passportstarter.PassportProperties
+import com.scrumdapp.passportplugin.PassportProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.security.oauth2.jwt.JwtDecoder
 import org.springframework.security.oauth2.jwt.JwtValidators

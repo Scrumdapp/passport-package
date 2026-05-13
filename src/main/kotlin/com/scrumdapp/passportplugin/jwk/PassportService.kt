@@ -1,4 +1,4 @@
-package com.scrumdapp.passportstarter.jwk
+package com.scrumdapp.passportplugin.jwk
 
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
@@ -10,8 +10,8 @@ import java.util.Date
 data class PassportContent(
 
     val userId: Int?,
-    val userGroups: List<Int>,
-    val roles: List<String>,
+    val userGroups: List<Int>?,
+    val roles: List<String>?,
 )
 
 class PassportService(
