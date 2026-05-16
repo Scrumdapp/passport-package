@@ -1,6 +1,6 @@
 package com.scrumdapp.passportplugin.annotations
 
-import com.scrumdapp.passportplugin.jwk.PassportService
+import com.scrumdapp.passportplugin.jwt.PassportService
 import lombok.AllArgsConstructor
 import org.springframework.core.MethodParameter
 import org.springframework.security.core.context.SecurityContextHolder
@@ -24,10 +24,9 @@ class PassportResolver(
         mavContainer: ModelAndViewContainer?,
         webRequest: NativeWebRequest,
         binderFactory: WebDataBinderFactory?
-    ): Any? {
+    ): Any {
         val jwt = SecurityContextHolder.getContext().authentication?.principal as? Jwt
-            ?: throw IllegalStateException("Principal couldn't be found or isn't a valid jwt")
-//        val param = parameter.getMethodAnnotation(Passport::class.java)
+            ?: throw IllegalStateException("Auth principal couldn't be found or isn't a valid jwt. To prevent the endpoint is protected.")
         return passportService.extractPassport(jwt)
     }
 

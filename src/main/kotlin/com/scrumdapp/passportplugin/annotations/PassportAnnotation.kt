@@ -2,7 +2,5 @@ package com.scrumdapp.passportplugin.annotations
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Passport(
-    val filter: String = ""
-)
+annotation class Passport
 
