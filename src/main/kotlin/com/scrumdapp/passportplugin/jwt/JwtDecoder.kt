@@ -1,6 +1,6 @@
-package com.scrumdapp.passportstarter.jwk
+package com.scrumdapp.passportplugin.jwt
 
-import com.scrumdapp.passportstarter.PassportProperties
+import com.scrumdapp.passportplugin.PassportProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.security.oauth2.jwt.JwtDecoder
 import org.springframework.security.oauth2.jwt.JwtValidators
@@ -12,7 +12,7 @@ fun jwtDecoder(
 ): JwtDecoder {
     val uri = passportProperties.jwkSetUri
     if (uri == "") {
-        throw IllegalArgumentException("No jwkSetUri provided, please provide a valid jwkSetUri using passport.jwkSetUri")
+        throw IllegalArgumentException("No jwk source provided. Please provide a valid jwkSetUri by setting passport.jwkSetUri in your application properties")
     }
 
     val decoder = NimbusJwtDecoder

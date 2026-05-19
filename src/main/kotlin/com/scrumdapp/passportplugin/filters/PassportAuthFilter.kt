@@ -1,6 +1,6 @@
-package com.scrumdapp.passportstarter.filters
+package com.scrumdapp.passportplugin.filters
 
-import com.scrumdapp.passportstarter.jwk.PassportService
+import com.scrumdapp.passportplugin.jwt.PassportService
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -31,7 +31,6 @@ class PassportAuthFilter(
 
             val userId = passportService.extractUserId(jwt)
             val roles = passportService.extractRoles(jwt)
-
 
             val authToken = JwtAuthenticationToken(
                 jwt,

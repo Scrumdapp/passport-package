@@ -6,19 +6,24 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>4.0.6</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.scrumdapp</groupId>
-    <artifactId>passport-starter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>passport-starter</name>
-    <description>passport-starter</description>
+    <artifactId>passport-plugin</artifactId>
+    <version>0.0.1</version>
+    <name>passport-plugin</name>
+    <description>Springboot plugin for Scrumdapp services to make use of jwk provided passport utilities</description>
     <url/>
     <licenses>
         <license/>
     </licenses>
     <developers>
-        <developer/>
+        <developer>
+            <name>Team Scrumdapp</name>
+            <email>info@scrumdapp.com</email>
+            <organization>Scrumdapp</organization>
+            <organizationUrl>https://scrumdapp.com</organizationUrl>
+        </developer>
     </developers>
     <scm>
         <connection/>
@@ -75,7 +80,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
-            <scope>annotationProcessor</scope>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

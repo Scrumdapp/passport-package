@@ -1,4 +1,4 @@
-package com.scrumdapp.passportstarter.jwk
+package com.scrumdapp.passportplugin.jwt
 
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
@@ -9,9 +9,9 @@ import java.util.Date
 
 data class PassportContent(
 
-    val userId: Int?,
-    val userGroups: List<Int>,
-    val roles: List<String>,
+    val userId: Int,
+    val userGroups: List<Int>?,
+    val roles: List<String>?,
 )
 
 class PassportService(
@@ -36,6 +36,10 @@ class PassportService(
 
     fun extractUserId(token: Jwt): Int {
         return token.subject.toInt()
+    }
+
+    fun extractUserGroups(token: Jwt): List<Int> {
+        return token.getClaim<List<Long>>("userGroups").map { it.toInt() }
     }
 
     fun extractRoles(token: Jwt): List<GrantedAuthority> {
