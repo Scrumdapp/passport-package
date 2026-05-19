@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.scrumdapp</groupId>
     <artifactId>passport-plugin</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>passport-plugin</name>
     <description>Springboot plugin for Scrumdapp services to make use of jwk provided passport utilities</description>
     <url/>
@@ -18,7 +18,12 @@
         <license/>
     </licenses>
     <developers>
-        <developer/>
+        <developer>
+            <name>Team Scrumdapp</name>
+            <email>info@scrumdapp.com</email>
+            <organization>Scrumdapp</organization>
+            <organizationUrl>https://scrumdapp.com</organizationUrl>
+        </developer>
     </developers>
     <scm>
         <connection/>
