@@ -22,13 +22,14 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
+        server-id: github
+        settings-path: ${{ github.workspace }} #
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+    - name: Publish to Scrumdapp Packages Apache Maven
+      run: mvn deploy
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        MAVEN_NAME: ${{ secrets.MAVEN_NAME }}
+        MAVEN_SECRET: ${{ secrets.MAVEN_SECRET }}
