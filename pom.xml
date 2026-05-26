@@ -18,7 +18,7 @@
         <repository>
             <id>scrumdapp</id>
             <name>Scrumdapp Maven Packages</name>
-            <url>https://maven.pkgs.scrumdapp.com/releases/passport-package</url>
+            <url>https://maven.pkgs.scrumdapp.com/releases</url>
         </repository>
     </distributionManagement>
     <licenses>
