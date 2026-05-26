@@ -22,7 +22,7 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
-        server-id: reposilite-repository
+        server-id: reposilite
         server-username: MAVEN_NAME
         server-password: MAVEN_SECRET
 
