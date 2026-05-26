@@ -16,7 +16,7 @@
     <url/>
     <distributionManagement>
         <repository>
-            <id>repository</id>
+            <id>scrumdapp-repository</id>
             <name>Scrumdapp Maven Packages</name>
             <url>https://maven.pkgs.scrumdapp.com/releases</url>
         </repository>

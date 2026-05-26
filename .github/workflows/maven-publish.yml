@@ -21,7 +21,7 @@ jobs:
         with:
           servers: |
             [{
-              "id": "reposilite-repository",
+              "id": "scrumdapp-repository",
               "username": "${{ secrets.MAVEN_NAME }}",
               "password": "${{ secrets.MAVEN_SECRET }}"
             }]
