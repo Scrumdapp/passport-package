@@ -27,7 +27,7 @@ jobs:
             }]
 
       - name: Publish with Maven
-        run: mvn publish
+        run: mvn deploy
         env:
           MAVEN_NAME: ${{ secrets.MAVEN_NAME }} # token name
           MAVEN_SECRET: ${{ secrets.MAVEN_SECRET }} # token secret (password)
