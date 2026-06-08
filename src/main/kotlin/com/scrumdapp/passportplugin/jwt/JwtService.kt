@@ -2,6 +2,7 @@ package com.scrumdapp.passportplugin.jwt
 
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.oauth2.jwt.Jwt
 import org.springframework.security.oauth2.jwt.JwtDecoder
 import org.springframework.security.oauth2.jwt.JwtException
@@ -9,9 +10,9 @@ import java.util.Date
 
 data class PassportContent(
 
-    val userId: Int,
-    val userGroups: List<Int>?,
-    val roles: List<String>?,
+    val userId: Long,
+    val userGroups: List<Long>,
+    val roles: List<String>,
 )
 
 class PassportService(
@@ -49,9 +50,15 @@ class PassportService(
 
     fun extractPassport(token: Jwt): PassportContent {
         return PassportContent(
-            token.subject.toInt(),
-            token.getClaim<List<Long>>("userGroups").map { it.toInt() },
+            token.subject.toLong(),
+            token.getClaim("userGroups") ?: emptyList(),
             token.getClaim<List<String>>("roles") ?: emptyList(),
         )
+    }
+
+    fun getPassport(): PassportContent {
+        val jwt = SecurityContextHolder.getContext().authentication?.principal as? Jwt
+            ?: throw IllegalStateException("Auth principal couldn't be found or isn't a valid jwt.")
+        return extractPassport(jwt)
     }
 }

@@ -1,4 +1,4 @@
-package com.scrumdapp.passportplugin.annotations
+package com.scrumdapp.passportplugin.utils.annotations
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.RUNTIME)

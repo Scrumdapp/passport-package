@@ -1,1 +1,1 @@
-com.scrumdapp.passportplugin.PassportAutoConfiguration
+com.scrumdapp.passportplugin.configs.SpringAutoConfiguration

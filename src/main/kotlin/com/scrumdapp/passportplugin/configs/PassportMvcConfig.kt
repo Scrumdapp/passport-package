@@ -1,6 +1,6 @@
 package com.scrumdapp.passportplugin.configs
 
-import com.scrumdapp.passportplugin.annotations.PassportResolver
+import com.scrumdapp.passportplugin.utils.annotations.PassportResolver
 import lombok.AllArgsConstructor
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.method.support.HandlerMethodArgumentResolver

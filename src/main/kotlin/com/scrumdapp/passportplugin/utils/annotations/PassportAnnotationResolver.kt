@@ -1,4 +1,4 @@
-package com.scrumdapp.passportplugin.annotations
+package com.scrumdapp.passportplugin.utils.annotations
 
 import com.scrumdapp.passportplugin.jwt.PassportService
 import lombok.AllArgsConstructor
@@ -26,8 +26,7 @@ class PassportResolver(
         binderFactory: WebDataBinderFactory?
     ): Any {
         val jwt = SecurityContextHolder.getContext().authentication?.principal as? Jwt
-            ?: throw IllegalStateException("Auth principal couldn't be found or isn't a valid jwt. To prevent the endpoint is protected.")
+            ?: throw IllegalStateException("Auth principal couldn't be found or isn't a valid jwt.")
         return passportService.extractPassport(jwt)
     }
-
 }
