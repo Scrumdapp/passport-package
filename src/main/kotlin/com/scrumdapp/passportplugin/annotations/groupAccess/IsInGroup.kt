@@ -1,4 +1,4 @@
-package com.scrumdapp.passportplugin.utils.isInGroupAnnotation
+package com.scrumdapp.passportplugin.annotations.groupAccess
 
 import com.scrumdapp.passportplugin.jwt.PassportService
 import jakarta.servlet.http.HttpServletRequest
