@@ -1,4 +1,4 @@
-package com.scrumdapp.passportplugin.utils.annotations
+package com.scrumdapp.passportplugin.utils.passportAnnotation
 
 import com.scrumdapp.passportplugin.jwt.PassportService
 import lombok.AllArgsConstructor

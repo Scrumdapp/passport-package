@@ -35,12 +35,12 @@ class PassportService(
         return token.expiresAt?.isBefore(Date().toInstant()) ?: throw RuntimeException("Invalid token. No expiry time was provided")
     }
 
-    fun extractUserId(token: Jwt): Int {
-        return token.subject.toInt()
+    fun extractUserId(token: Jwt): Long {
+        return token.subject.toLong()
     }
 
-    fun extractUserGroups(token: Jwt): List<Int> {
-        return token.getClaim<List<Long>>("userGroups").map { it.toInt() }
+    fun extractUserGroups(token: Jwt): List<Long> {
+        return token.getClaim("userGroups")
     }
 
     fun extractRoles(token: Jwt): List<GrantedAuthority> {

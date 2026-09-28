@@ -5,7 +5,7 @@ import com.scrumdapp.passportplugin.filters.PassportAuthFilter
 import com.scrumdapp.passportplugin.jwt.PassportService
 import com.scrumdapp.passportplugin.jwt.jwtDecoder
 import com.scrumdapp.passportplugin.utils.PassportUtilService
-import com.scrumdapp.passportplugin.utils.annotations.PassportResolver
+import com.scrumdapp.passportplugin.utils.passportAnnotation.PassportResolver
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
