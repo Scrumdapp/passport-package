@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 @EnableConfigurationProperties(PassportProperties::class)
-class SpringAutoConfiguration {
+class PassportAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
@@ -34,7 +34,7 @@ class SpringAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    fun passportMvcConfig(passportResolver: PassportResolver): PassportMvcConfig {
-        return PassportMvcConfig(passportResolver)
+    fun passportMvcConfig(passportResolver: PassportResolver, passportService: PassportService): PassportMvcConfig {
+        return PassportMvcConfig(passportResolver, passportService)
     }
 }
