@@ -28,13 +28,13 @@ class PassportAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    fun passportResolver(passportService: PassportService): PassportResolver {
-        return PassportResolver(passportService)
+    fun passportResolver(): PassportResolver {
+        return PassportResolver()
     }
 
     @Bean
     @ConditionalOnMissingBean
-    fun passportMvcConfig(passportResolver: PassportResolver, passportService: PassportService): PassportMvcConfig {
-        return PassportMvcConfig(passportResolver, passportService)
+    fun passportMvcConfig(passportResolver: PassportResolver): PassportMvcConfig {
+        return PassportMvcConfig(passportResolver)
     }
 }

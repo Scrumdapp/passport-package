@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 @AllArgsConstructor
 class PassportMvcConfig(
     private val passportResolver: PassportResolver,
-    private val passportService: PassportService
 ): WebMvcConfigurer {
 
     override fun addArgumentResolvers(argumentResolvers: MutableList<HandlerMethodArgumentResolver>) {
@@ -21,6 +20,6 @@ class PassportMvcConfig(
     }
 
     override fun addInterceptors(registry: InterceptorRegistry) {
-        registry.addInterceptor(GroupAccessAnnotationInterceptor(passportService))
+        registry.addInterceptor(GroupAccessAnnotationInterceptor())
     }
 }

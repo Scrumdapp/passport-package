@@ -8,13 +8,6 @@ import org.springframework.security.oauth2.jwt.JwtDecoder
 import org.springframework.security.oauth2.jwt.JwtException
 import java.util.Date
 
-data class PassportContent(
-
-    val userId: Long,
-    val userGroups: List<Long>,
-    val roles: List<String>,
-)
-
 class PassportService(
     private val jwtDecoder: JwtDecoder
 ) {
