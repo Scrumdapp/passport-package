@@ -18,9 +18,11 @@ class GroupAccessAnnotationInterceptor(
 
         if (handler !is HandlerMethod) return true
 
-        val paramName = handler.getMethodAnnotation(IsInGroup::class.java)?.paramName ?: "groupId"
-        val pathVariables = request.getTemplateVariables()
+        val annotation = handler.getMethodAnnotation(IsInGroup::class.java) ?: return true
 
+        val paramName = annotation.paramName.ifEmpty { "groupId" }
+
+        val pathVariables = request.getTemplateVariables()
         val param = pathVariables[paramName]
             ?: throw IllegalStateException("Could not find parameter $paramName in uri ${request.requestURI}")
 
