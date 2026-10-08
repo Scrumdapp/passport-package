@@ -1,10 +1,10 @@
-package com.scrumdapp.passportplugin
+package com.scrumdapp.passportplugin.configs
 
-import com.scrumdapp.passportplugin.annotations.PassportResolver
-import com.scrumdapp.passportplugin.configs.PassportMvcConfig
+import com.scrumdapp.passportplugin.PassportProperties
 import com.scrumdapp.passportplugin.filters.PassportAuthFilter
 import com.scrumdapp.passportplugin.jwt.PassportService
 import com.scrumdapp.passportplugin.jwt.jwtDecoder
+import com.scrumdapp.passportplugin.annotations.passportController.PassportResolver
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
@@ -28,8 +28,8 @@ class PassportAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    fun passportResolver(passportService: PassportService): PassportResolver {
-        return PassportResolver(passportService)
+    fun passportResolver(): PassportResolver {
+        return PassportResolver()
     }
 
     @Bean
